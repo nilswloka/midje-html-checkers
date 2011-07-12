@@ -4,4 +4,6 @@
         [midje.checkers.defining :only [checker?]]))
 
 (facts "about contains-text"
-       #'contains-text => checker?)
+       #'contains-text => checker?
+       "<p>Hello World!</p>" => (contains-text "World")
+       "<a href=\"Hello World\">Whatever</a>" =not=> (contains-text "World"))
