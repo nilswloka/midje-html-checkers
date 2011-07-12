@@ -5,6 +5,11 @@ framework](https://github.com/marick/Midje) for stating facts about
 HTML code. The checkers' implementation is based on the [Enlive
 templating library](https://github.com/cgrand/enlive).
 
+You can use midje-html-checkers by adding the folloing dependency to
+your project.clj:
+
+    [midge-html-checkers "1.0.0-SNAPSHOT"]
+
 So far, there is only one checker, which can be used like this:
 
     (use 'midje-html-checkers.core)
