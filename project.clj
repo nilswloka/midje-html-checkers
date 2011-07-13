@@ -1,4 +1,4 @@
-(defproject midje-html-checkers "1.0.0-SNAPSHOT"
+(defproject midje-html-checkers "1.0.0"
   :description "Midje checkers for stating facts about HTML pages"
   :dependencies [[org.clojure/clojure "1.2.1"]
                  [org.clojure/clojure-contrib "1.2.0"]
