@@ -1,7 +1,7 @@
 (ns midje-html-checkers.core
   (:use [midje.checkers.defining :only [defchecker checker]])
   (:use [midje.checkers.extended-equality :only [extended-=]])
-  (:use [net.cgrand.enlive-html :only [select text]])
+  (:use [net.cgrand.enlive-html :only [select text html-resource text-pred]])
   (:import java.io.StringReader))
 
 (defn html-resource-from-string
