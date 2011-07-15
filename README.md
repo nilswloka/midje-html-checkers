@@ -8,7 +8,7 @@ templating library](https://github.com/cgrand/enlive).
 You can use midje-html-checkers by adding the folloing dependency to
 your project.clj:
 
-    [midje-html-checkers "1.0.0"]
+    [midje-html-checkers "1.0.1"]
 
 At the moment, midje-html-checkers provides the generic checkers `at-any`,
 `at-every` and `number-of`, which can be used in conjunction with node predicates:
