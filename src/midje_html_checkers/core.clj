@@ -1,7 +1,7 @@
 (ns midje-html-checkers.core
   (:use [midje.checkers.defining :only [defchecker checker]])
   (:use [midje.checkers.extended-equality :only [extended-=]])
-  (:use [net.cgrand.enlive-html :only [select text]])
+  (:use [net.cgrand.enlive-html :only [select text html-resource text-pred]])
   (:import java.io.StringReader))
 
 (defn html-resource-from-string
@@ -41,11 +41,12 @@
   (generic-html-checker selector node-predicate
                         #(if (empty? %) false (every? identity %))))
 
-(defchecker number-of [selector number-predicate]
-  "Creates a checker that evaluates to true if number-predicate evaluates
-  to true for the number of nodes matched by selector."
+(defchecker number-of [selector expected]
+  "Creates a checker that evaluates to true if the number of nodes
+   matched by selector matches `expected`. `expected` can be a number
+   or predicate function."
   (generic-html-checker selector identity
-                        #(number-predicate (count %))))
+                        #(extended-= (count %) expected)))
 
 (defn has-attr [attr v]
   "Creates a node predicate that evaluates to true for nodes that have an
