@@ -25,5 +25,5 @@
 
 (facts "about number-of"
        #'number-of => checker?
-       "<ul><li>1</li><li>2</li><li>3</li></ul>" => (number-of [:li] #(= 3 %))
+       "<ul><li>1</li><li>2</li><li>3</li></ul>" => (number-of [:li] 3)
        "<ul><li>1</li><li>2</li></ul>" =not=> (number-of [:li] #(> % 2)))
